@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jane Monton-Cagadas | Portfolio</title>
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --bg2: #111111;
+    --bg3: #1a1a1a;
+    --pink: #ff4d94;
+    --pink2: #ff7fb0;
+    --pink3: #ffb3d1;
+    --text: #e6e6e6;
+    --muted: #a0a0a0;
+    --border: #2a2a2a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+  }
+  a { color: var(--pink); text-decoration: none; transition: 0.2s; }
+  a:hover { color: var(--pink2); }
+
+  /* NAV */
+  nav {
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-logo { font-weight: 700; color: var(--pink); font-size: 1.1rem; letter-spacing: 1px; }
+  .nav-links { display: flex; gap: 1.5rem; }
+  .nav-links a { color: var(--muted); font-size: 0.9rem; }
+  .nav-links a:hover { color: var(--pink); }
+
+  /* HERO */
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    padding: 4rem 2rem;
+    flex-wrap: wrap;
+    background: linear-gradient(180deg, #1a0a10 0%, var(--bg) 100%);
+  }
+  .hero-img {
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--pink);
+    box-shadow: 0 0 30px rgba(255, 77, 148, 0.3);
+  }
+  .hero-text h1 {
+    font-size: 3rem;
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, var(--pink), var(--pink2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero-text h2 {
+    font-size: 1.1rem;
+    color: var(--muted);
+    margin: 0.5rem 0 1rem;
+    font-weight: 400;
+  }
+  .hero-text p { max-width: 500px; color: var(--muted); }
+
+  /* SECTIONS */
+  section { padding: 3rem 2rem; max-width: 1100px; margin: 0 auto; }
+  .section-title {
+    font-size: 1.5rem;
+    color: var(--pink);
+    border-left: 4px solid var(--pink);
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* TO-DO APP */
+  .todo-container {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  }
+  .todo-input-row { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+  .todo-input-row input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.95rem;
+  }
+  .todo-input-row button {
+    padding: 0.75rem 1.2rem;
+    border-radius: 8px;
+    border: none;
+    background: var(--pink);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  .todo-input-row button:hover { background: var(--pink2); }
+  .todo-list { list-style: none; }
+  .todo-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--border);
+    transition: 0.2s;
+  }
+  .todo-item:hover { background: var(--bg3); }
+  .todo-item.done span { text-decoration: line-through; color: var(--muted); }
+  .todo-item input[type="checkbox"] { accent-color: var(--pink); width: 18px; height: 18px; cursor: pointer; }
+  .todo-item span { flex: 1; }
+  .todo-item button {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+  }
+  .todo-item button:hover { color: #ff4d4d; border-color: #ff4d4d; }
+
+  /* GALLERY GRID */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+  .gallery-item {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .gallery-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(255, 77, 148, 0.15);
+  }
+  .gallery-item img {
+    width: 100%; height: 160px;
+    object-fit: cover;
+    display: block;
+  }
+  .gallery-item .caption {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  /* TECH BADGES */
+  .tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .badge {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    color: var(--pink2);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .hero-text h1 { font-size: 2rem; }
+    .nav-links { display: none; }
+    section { padding: 2rem 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">JANE</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#todo">To-Do</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#events">Events</a>
+    <a href="#programs">Programs</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="hero" id="about">
+  <img src="../Profile.jpg" alt="Jane Monton-Cagadas" class="hero-img">
+  <div class="hero-text">
+    <h1>JANE</h1>
+    <h2>Fresh BSIT Graduate &bull; Aspiring Software Engineer</h2>
+    <p>I enjoy building practical software, asking why things work, and treating every bug as a learning step. Currently focused on growing through small, consistent projects.</p>
+  </div>
+</section>
+
+<section id="todo">
+  <div class="section-title">Task Tracker</div>
+  <div class="todo-container">
+    <div class="todo-input-row">
+      <input type="text" id="todoInput" placeholder="Add a new task..." />
+      <button onclick="addTodo()">Add</button>
+    </div>
+    <ul class="todo-list" id="todoList"></ul>
+  </div>
+</section>
+
+<section id="tech">
+  <div class="section-title">Tech Stack</div>
+  <div class="tech-stack">
+    <span class="badge">C++</span>
+    <span class="badge">C#</span>
+    <span class="badge">Java</span>
+    <span class="badge">PHP</span>
+    <span class="badge">HTML</span>
+    <span class="badge">CSS</span>
+    <span class="badge">JavaScript</span>
+    <span class="badge">Visual Studio</span>
+    <span class="badge">VS Code</span>
+    <span class="badge">Git</span>
+    <span class="badge">GitHub</span>
+    <span class="badge">Figma</span>
+    <span class="badge">Canva</span>
+  </div>
+</section>
+
+<section id="certificates">
+  <div class="section-title">Certificates</div>
+  <div class="gallery">
+    <div class="gallery-item"><img src="../Certificates/Annual Project DocTrack Conference.jpg" alt="Certificate"><div class="caption">Annual Project DocTrack Conference</div></div>
+    <div class="gallery-item"><img src="../Certificates/Basic Course in Video Editing.jpg" alt="Certificate"><div class="caption">Basic Course in Video Editing</div></div>
+    <div class="gallery-item"><img src="../Certificates/CLUP Module 1.jpg" alt="Certificate"><div class="caption">CLUP Module 1</div></div>
+    <div class="gallery-item"><img src="../Certificates/CLUP Module 2-A.jpg" alt="Certificate"><div class="caption">CLUP Module 2-A</div></div>
+    <div class="gallery-item"><img src="../Certificates/DAP.jpg" alt="Certificate"><div class="caption">DAP</div></div>
+    <div class="gallery-item"><img src="../Certificates/DREAPIM.jpg" alt="Certificate"><div class="caption">DREAPIM</div></div>
+    <div class="gallery-item"><img src="../Certificates/Davao Smarter Solution.jpg" alt="Certificate"><div class="caption">Davao Smarter Solution</div></div>
+    <div class="gallery-item"><img src="../Certificates/From Vision to Action.jpg" alt="Certificate"><div class="caption">From Vision to Action</div></div>
+    <div class="gallery-item"><img src="../Certificates/Mental Health Series.jpg" alt="Certificate"><div class="caption">Mental Health Series</div></div>
+    <div class="gallery-item"><img src="../Certificates/Monitoring and Evaluation Workshop.jpg" alt="Certificate"><div class="caption">Monitoring and Evaluation Workshop</div></div>
+    <div class="gallery-item"><img src="../Certificates/Orientation on BME and SURA.jpg" alt="Certificate"><div class="caption">Orientation on BME and SURA</div></div>
+    <div class="gallery-item"><img src="../Certificates/Orientation on Proper Handling.jpg" alt="Certificate"><div class="caption">Orientation on Proper Handling</div></div>
+    <div class="gallery-item"><img src="../Certificates/Project Doctrack Discussion.jpg" alt="Certificate"><div class="caption">Project Doctrack Discussion</div></div>
+    <div class="gallery-item"><img src="../Certificates/Property Officer's Forum.jpg" alt="Certificate"><div class="caption">Property Officer's Forum</div></div>
+    <div class="gallery-item"><img src="../Certificates/Supplementary Forum.jpg" alt="Certificate"><div class="caption">Supplementary Forum</div></div>
+    <div class="gallery-item"><img src="../Certificates/Training on Revised Regional Projects.jpg" alt="Certificate"><div class="caption">Training on Revised Regional Projects</div></div>
+    <div class="gallery-item"><img src="../Certificates/VIDEOGRAPHY.jpg" alt="Certificate"><div class="caption">VIDEOGRAPHY</div></div>
+  </div>
+</section>
+
+<section id="events">
+  <div class="section-title">Events</div>
+  <div class="gallery">
+    <div class="gallery-item"><img src="../Event/Budget Management Workshop.jpg" alt="Event"><div class="caption">Budget Management Workshop</div></div>
+    <div class="gallery-item"><img src="../Event/On the Gound Smarter Solution 2.jpg" alt="Event"><div class="caption">On the Ground Smarter Solution 2</div></div>
+    <div class="gallery-item"><img src="../Event/On the Gound Smarter Solution.jpg" alt="Event"><div class="caption">On the Ground Smarter Solution</div></div>
+    <div class="gallery-item"><img src="../Event/Project Doctrack Annual Conference 2.png" alt="Event"><div class="caption">Project Doctrack Annual Conference 2</div></div>
+    <div class="gallery-item"><img src="../Event/Project Doctrack Annual Conference.png" alt="Event"><div class="caption">Project Doctrack Annual Conference</div></div>
+    <div class="gallery-item"><img src="../Event/Sustainability in focus.jpg" alt="Event"><div class="caption">Sustainability in Focus</div></div>
+  </div>
+</section>
+
+<section id="programs">
+  <div class="section-title">Programs & Projects</div>
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="../Program/Cagadas POS/Simple_POS1/src/simple_pos1/JOLIBEE.form" alt="Simple POS" onerror="this.style.background='#1a1a1a'; this.alt='Simple POS';">
+      <div class="caption">Simple POS (Java)</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../Program/Enrollment System/log in final/Form1.cs" alt="Enrollment System" onerror="this.style.background='#1a1a1a'; this.alt='Enrollment System';">
+      <div class="caption">Enrollment System (C#)</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../Program/My First GUI/Home/src/home/Home.java" alt="My First GUI" onerror="this.style.background='#1a1a1a'; this.alt='My First GUI';">
+      <div class="caption">My First GUI (Java)</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-title">Contact</div>
+  <p style="color: var(--muted); margin-bottom: 0.5rem;">Email: <a href="mailto:Cagadas.jane30@gmail.com">Cagadas.jane30@gmail.com</a></p>
+  <p style="color: var(--muted); margin-bottom: 0.5rem;">GitHub: <a href="https://github.com/montonjane" target="_blank">github.com/montonjane</a></p>
+
+</section>
+
+<footer>
+  &copy; 2026 Jane Monton-Cagadas. Fresh BSIT Graduate &bull; Aspiring Software Engineer.
+</footer>
+
+<script>
+function addTodo() {
+  const input = document.getElementById('todoInput');
+  const list = document.getElementById('todoList');
+  const text = input.value.trim();
+  if (!text) return;
+  const li = document.createElement('li');
+  li.className = 'todo-item';
+  li.innerHTML = `<input type="checkbox" onchange="toggleTodo(this)"><span>${escapeHtml(text)}</span><button onclick="deleteTodo(this)">Delete</button>`;
+  list.appendChild(li);
+  input.value = '';
+}
+function toggleTodo(cb) { cb.parentElement.classList.toggle('done', cb.checked); }
+function deleteTodo(btn) { btn.parentElement.remove(); }
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+document.getElementById('todoInput').addEventListener('keypress', function(e) { if (e.key === 'Enter') addTodo(); });
+</script>
+
+</body>
+</html>

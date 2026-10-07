@@ -1,0 +1,9 @@
+C:\Users\c1typ\OneDrive\Desktop\jane\final programming project\log in final\log in final\bin\Debug\log in final.exe
+C:\Users\c1typ\OneDrive\Desktop\jane\final programming project\log in final\log in final\bin\Debug\log in final.pdb
+C:\Users\c1typ\OneDrive\Desktop\jane\final programming project\log in final\log in final\obj\x86\Debug\log_in_final.Properties.Resources.resources
+C:\Users\c1typ\OneDrive\Desktop\jane\final programming project\log in final\log in final\obj\x86\Debug\log in final.csproj.GenerateResource.Cache
+C:\Users\c1typ\OneDrive\Desktop\jane\final programming project\log in final\log in final\obj\x86\Debug\log in final.exe
+C:\Users\c1typ\OneDrive\Desktop\jane\final programming project\log in final\log in final\obj\x86\Debug\log in final.pdb
+C:\Users\c1typ\OneDrive\Desktop\jane\final programming project\log in final\log in final\obj\x86\Debug\log_in_final.mainform.resources
+C:\Users\c1typ\OneDrive\Desktop\jane\final programming project\log in final\log in final\obj\x86\Debug\log in final.csprojResolveAssemblyReference.cache
+C:\Users\c1typ\OneDrive\Desktop\jane\final programming project\log in final\log in final\obj\x86\Debug\log_in_final.LOGINFORM.resources
